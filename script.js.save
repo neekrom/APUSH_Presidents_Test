@@ -1,0 +1,93 @@
+names = [
+	"George Washington",
+	"John Adams",
+	"Thomas Jefferson",
+	"James Madison",
+	"James Monroe",
+	"John Quincy Adams",
+	"Andrew Jackson",
+	"Martin Van Buren",
+	"William Henry Harrison",
+	"John Tyler",
+	"James K Polk",
+	"Zachary Taylor",
+	"Millard Fillmore",
+	"Franklin Pierce",
+	"James Buchanan",
+	"Abraham Lincoln",
+	"Andrew Johnson",
+	"Ulysses S Grant",
+	"Rutherford B Hayes",
+	"James A Garfield",
+	"Chester A Arthur",
+	"Grover Cleveland",
+	"Benjamin Harrison",
+	"Grover Cleveland",
+	"William McKinley",
+	"Theodore Roosevelt",
+	"William H Taft",
+	"Woodrow Wilson",	
+	"Warren G Harding",
+	"Calvin Coolidge",
+	"Herbert Hoover",
+	"Franklin D Roosevelt",
+	"Harry S Truman", 
+	"Dwight D Eisenhower",
+	"John F Kennedy", 
+	"Lyndon B Johnson",
+	"Richard Nixon",
+	"Gerald Ford",	
+	"Jimmy Carter",
+	"Ronald Reagan",
+	"George H W Bush",
+	"Bill Clinton", 
+	"George W Bush",
+	"Barack Obama",
+	"Donald Trump"
+];
+
+party = [
+	"n",
+	"f",
+	"dr",	
+	"dr",
+ "dr",
+
+	
+
+];
+
+nameBoxes = [];
+yearBoxes = [];
+partyBoxes = [];
+
+for(var i = 0; i < names.length; i++){
+	nameBoxes.push(document.createElement('input'));
+	nameBoxes[i].type = 'text';
+	nameBoxes[i].name = 'president'
+	document.getElementById('presidents').appendChild(nameBoxes[i]);
+	document.getElementById('presidents').appendChild(document.createElement("br"));
+	
+	yearBoxes.push(document.createElement('input'));
+	yearBoxes[i].type  = 'text';
+	yearBoxes[i].name = 'years';
+	document.getElementById('years').appendChild(yearBoxes[i]);
+	document.getElementById('years').appendChild(document.createElement("br"));
+
+	partyBoxes.push(document.createElement('input'));
+        partyBoxes[i].type  = 'text';
+        partyBoxes[i].name = 'party';
+        document.getElementById('party').appendChild(partyBoxes[i]);
+        document.getElementById('party').appendChild(document.createElement("br"));
+
+}
+
+function update(){
+	//console.log(nameBoxes[3].value);
+	for(var i = 0; i < names.length; i++){
+		if(nameBoxes[i].value.toLowerCase().split(" ")[nameBoxes[i].value.split(" ").length-1] == names[i].split(" ")[names[i].split(" ").length - 1].toLowerCase())nameBoxes[i].style.backgroundColor = "green";
+		else if(nameBoxes[i].value != "") nameBoxes[i].style.backgroundColor = "red";
+	}
+}
+
+setInterval(update, 500);
