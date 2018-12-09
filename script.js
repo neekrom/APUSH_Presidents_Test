@@ -176,7 +176,24 @@ for(var i = 0; i < names.length; i++){
 function update(){
 	//console.log(nameBoxes[3].value);
 	for(var i = 0; i < names.length; i++){
-		if(nameBoxes[i].value.toLowerCase().split(" ")[nameBoxes[i].value.split(" ").length-1] == names[i].split(" ")[names[i].split(" ").length - 1].toLowerCase())nameBoxes[i].style.backgroundColor = "rgb(0, 255, 0)";
+		nameInput = nameBoxes[i].value.toLowerCase().replace(".", "").split(" ");
+		correct = true;
+		if(nameInput.length == 1) {
+			if(nameInput[0] != names[i].split(" ")[names[i].split(" ").length-1].toLowerCase()) correct = false;
+		}
+		else if(nameInput.length ==2) {
+			if(nameInput[0] != names[i].split(" ")[0].toLowerCase()) correct = false;
+			if(nameInput[1] != names[i].split(" ")[names[i].split(" ").length-1].toLowerCase()) correct = false;
+		}
+		else if(nameInput.length ==3) {
+			if(nameInput[0] != names[i].split(" ")[0].toLowerCase()) correct = false;
+                        if(nameInput[1] != names[i].split(" ")[1].toLowerCase()) correct = false;
+			if(nameInput[2] != names[i].split(" ")[2].toLowerCase()) correct = false;
+		}
+		else {
+			correct = false;
+		}
+		if(correct) nameBoxes[i].style.backgroundColor = "rgb(0, 255, 0)";
 		else if(nameBoxes[i].value != "") nameBoxes[i].style.backgroundColor = "red";
 
 		if(partyBoxes[i].value.toLowerCase() == party[i]) partyBoxes[i].style.backgroundColor = "rgb(0, 255, 0)";
