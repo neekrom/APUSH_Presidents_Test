@@ -190,7 +190,7 @@ function update(){
 	//console.log(allBoxes.indexOf(document.activeElement));
 }
 
-setInterval(update, 500);
+setInterval(update, 200);
 
 window.onkeyup = function(e) {
 	
