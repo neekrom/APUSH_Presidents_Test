@@ -203,5 +203,7 @@ window.onkeyup = function(e) {
 	//console.log(ix);
 	if(key == 39) allBoxes[ix+1].focus();
 	if(key == 37) allBoxes[ix-1].focus();
+	if(key == 38) allBoxes[ix-3].focus();
+	if(key == 40) allBoxes[ix+3].focus();
 }
 
