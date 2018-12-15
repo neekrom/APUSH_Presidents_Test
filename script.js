@@ -192,9 +192,9 @@ function update(){
 		}
 		else if(nameInput.length ==4) {
 			if(nameInput[0]!=names[i].split(" ")[0].toLowerCase()) correct = false;
-			if(nameInput[0]!=names[i].split(" ")[1].toLowerCase()) correct = false;
-			if(nameInput[0]!=names[i].split(" ")[2].toLowerCase()) correct = false;
-			if(nameInput[0]!=names[i].split(" ")[3].toLowerCase()) correct = false;
+			if(nameInput[1]!=names[i].split(" ")[1].toLowerCase()) correct = false;
+			if(nameInput[2]!=names[i].split(" ")[2].toLowerCase()) correct = false;
+			if(nameInput[3]!=names[i].split(" ")[3].toLowerCase()) correct = false;
 		}
 		else {
 			correct=false;
