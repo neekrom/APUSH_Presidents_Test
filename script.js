@@ -149,6 +149,11 @@ partyBoxes = [];
 allBoxes = [];
 
 for(var i = 0; i < names.length; i++){
+	t = document.createElement('input');
+	t.value = i+1;
+	document.getElementById('numbers').appendChild(t);
+	document.getElementById('numbers').appendChild(document.createElement('br'));
+
 	nameBoxes.push(document.createElement('input'));
 	nameBoxes[i].type = 'text';
 	nameBoxes[i].name = 'president'
