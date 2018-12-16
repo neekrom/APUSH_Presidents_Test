@@ -262,7 +262,7 @@ function update(){
 		else if(partyBoxes[i].value != "") partyBoxes[i].style.backgroundColor = "red";
 
 		if(yearBoxes[i].value == year[i]) yearBoxes[i].style.backgroundColor = "rgb(0, 255, 0)";
-		else if(yearBoxes[i].value==yearsshort[i]) yearBoxes[i].style.backgroundColor='green';
+		else if(yearBoxes[i].value==yearsshort[i]) yearBoxes[i].style.backgroundColor='rgb(0,255,0)';
                 else if(yearBoxes[i].value != "") yearBoxes[i].style.backgroundColor = "red";
 
 	}	
