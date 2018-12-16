@@ -149,6 +149,13 @@ partyBoxes = [];
 allBoxes = [];
 
 for(var i = 0; i < names.length; i++){
+	t = document.createElement('input');
+	t.setAttribute('readOnly','true');
+	t.value = i+1;
+	document.getElementById('numbers').appendChild(t);
+	document.getElementById('numbers').appendChild(document.createElement('br'));
+	t.style['width']='30px'
+
 	nameBoxes.push(document.createElement('input'));
 	nameBoxes[i].type = 'text';
 	nameBoxes[i].name = 'president'
@@ -190,8 +197,14 @@ function update(){
                         if(nameInput[1] != names[i].split(" ")[1].toLowerCase()) correct = false;
 			if(nameInput[2] != names[i].split(" ")[2].toLowerCase()) correct = false;
 		}
+		else if(nameInput.length ==4) {
+			if(nameInput[0]!=names[i].split(" ")[0].toLowerCase()) correct = false;
+			if(nameInput[1]!=names[i].split(" ")[1].toLowerCase()) correct = false;
+			if(nameInput[2]!=names[i].split(" ")[2].toLowerCase()) correct = false;
+			if(nameInput[3]!=names[i].split(" ")[3].toLowerCase()) correct = false;
+		}
 		else {
-			correct = false;
+			correct=false;
 		}
 		if(correct) nameBoxes[i].style.backgroundColor = "rgb(0, 255, 0)";
 		else if(nameBoxes[i].value != "") nameBoxes[i].style.backgroundColor = "red";
